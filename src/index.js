@@ -1,9 +1,7 @@
-import messages_en from "./translations/en.json";
+import messagesEn from './translations/en.json';
 
 const DEFAULT_CONFIG = {
-  "translations": [{ key: "en", messages: messages_en }],
-}
+  'translations': [{ key: 'en', messages: messagesEn }],
+};
 
-export const OpensearchReportsModule = (cfg) => {
-  return { ...DEFAULT_CONFIG, ...cfg };
-}
+export const OpensearchReportsModule = (cfg) => ({ ...DEFAULT_CONFIG, ...cfg });
