@@ -1,0 +1,1 @@
+# openimis-fe-opensearch_reports_js
