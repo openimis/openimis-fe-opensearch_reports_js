@@ -1,5 +1,5 @@
 {
-  "name": "@openimis/fe-opensearch_reports_js",
+  "name": "@openimis/fe-opensearch_reports",
   "version": "0.1.0",
   "license": "AGPL-3.0-only",
   "description": "openIMIS Frontend OpenSearch reports module",
