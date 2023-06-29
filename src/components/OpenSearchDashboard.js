@@ -4,7 +4,7 @@ const OpenSearchDashboard = () => {
   
   return (
     <iframe 
-      src="http://172.20.20.24:8090/app/home#/)" 
+      src="http://172.20.20.97:5601/app/home#/)" 
       style={{position: 'absolute', width: "95%", height: "90%"}}
       allow="same-origin allow-scripts"
     />
