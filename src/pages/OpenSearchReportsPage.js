@@ -19,10 +19,12 @@ function OpenSearchReportsPages(props) {
       <OpenSearchDashboard />
     </div>
   );
-};
+}
 
 const mapStateToProps = (state) => ({
   rights: !!state.core && !!state.core.user && !!state.core.user.i_user ? state.core.user.i_user.rights : [],
 });
 
-export default injectIntl(withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(OpenSearchReportsPages)))));
+export default injectIntl(
+  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(OpenSearchReportsPages))))
+);
