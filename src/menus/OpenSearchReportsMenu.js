@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import { injectIntl } from 'react-intl';
 import { Tune } from '@material-ui/icons';
 import { formatMessage, MainMenuContribution, withModulesManager } from '@openimis/fe-core';
 import { OPENSEARCH_REPORTS_MAIN_MENU_CONTRIBUTION_KEY } from '../constants';
@@ -10,7 +11,7 @@ import { OPENSEARCH_REPORTS_MAIN_MENU_CONTRIBUTION_KEY } from '../constants';
 function OpenSearchReportsMenu(props) {
   const entries = [
     {
-      text: 'openSearch reports',
+      text: formatMessage(props.intl, 'openSearchReports', 'openSearch'),
       icon: <Tune />,
       route: '/openSearchReports',
     },
@@ -23,7 +24,7 @@ function OpenSearchReportsMenu(props) {
   return (
     <MainMenuContribution
       {...props}
-      header={'openSearch reports'}
+      header={formatMessage(props.intl, 'openSearchReports', 'openSearch')}
       entries={entries}
     />
   );
@@ -33,4 +34,4 @@ const mapStateToProps = (state) => ({
   rights: !!state.core && !!state.core.user && !!state.core.user.i_user ? state.core.user.i_user.rights : [],
 });
 
-export default withModulesManager(connect(mapStateToProps)(OpenSearchReportsMenu));
+export default injectIntl(withModulesManager(connect(mapStateToProps)(OpenSearchReportsMenu)));
