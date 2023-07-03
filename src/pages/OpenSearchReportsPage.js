@@ -16,7 +16,7 @@ const OpenSearchReportsPages = (props) => {
 
   return (
     <div className={classes.page}>
-      <Helmet title="OpenSearch" />
+      <Helmet title={formatMessage(props.intl, 'openSearchReports', 'openSearch')} />
       <OpenSearchDashboard />
     </div>
   );
@@ -26,4 +26,4 @@ const mapStateToProps = (state) => ({
   rights: !!state.core && !!state.core.user && !!state.core.user.i_user ? state.core.user.i_user.rights : [],
 });
 
-export default withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(OpenSearchReportsPages))));
+export default injectIntl(withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(OpenSearchReportsPages)))));
