@@ -8,7 +8,8 @@ const OpenSearchDashboard = () => {
   return (
     <iframe 
       src={`https://${proxyHost}/${openSearchBaseRootPath}/`} 
-      style={{position: 'absolute', width: "95%", height: "90%"}}
+      title="OpenSearch Dashboard"
+      style={{ position: 'absolute', width: '95%', height: '90%' }}
       allow="same-origin allow-scripts"
     />
   );
