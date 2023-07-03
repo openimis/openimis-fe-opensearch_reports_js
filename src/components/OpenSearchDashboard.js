@@ -1,7 +1,7 @@
 import React from 'react';
 
 /* eslint-disable */
-const OpenSearchDashboard = () => {
+function OpenSearchDashboard() {
   const proxyHost = process.env.PROXY_HOST ?? '172.20.20.13';
   const openSearchBaseRootPath = process.env.OPENSEARCH_PROXY_ROOT ?? 'opensearch';
 

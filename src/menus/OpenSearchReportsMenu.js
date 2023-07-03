@@ -18,7 +18,7 @@ function OpenSearchReportsMenu(props) {
   ];
   entries.push(
     ...props.modulesManager
-      .getContribs(OPENSEARCH_REPORTS_MAIN_MENU_CONTRIBUTION_KEY)
+      .getContribs(OPENSEARCH_REPORTS_MAIN_MENU_CONTRIBUTION_KEY),
   );
 
   return (

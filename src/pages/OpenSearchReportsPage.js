@@ -1,22 +1,21 @@
-
-import React from "react";
-import { Helmet, withModulesManager, formatMessage } from "@openimis/fe-core";
-import { injectIntl } from "react-intl";
-import { withTheme, withStyles } from "@material-ui/core/styles";
-import { connect } from "react-redux";
-import OpenSearchDashboard from "../components/OpenSearchDashboard";
+import React from 'react';
+import { Helmet, withModulesManager, formatMessage } from '@openimis/fe-core';
+import { injectIntl } from 'react-intl';
+import { withTheme, withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
+import OpenSearchDashboard from '../components/OpenSearchDashboard';
 
 const styles = (theme) => ({
   page: theme.page,
   fab: theme.fab,
 });
 
-const OpenSearchReportsPages = (props) => {
-  const { intl, classes, rights } = props;
+function OpenSearchReportsPages(props) {
+  const { intl, classes } = props;
 
   return (
     <div className={classes.page}>
-      <Helmet title={formatMessage(props.intl, 'openSearchReports', 'openSearch')} />
+      <Helmet title={formatMessage(intl, 'openSearchReports', 'openSearch')} />
       <OpenSearchDashboard />
     </div>
   );
