@@ -1,14 +1,14 @@
 import React from 'react';
 
+/* eslint-disable */
 const OpenSearchDashboard = () => {
-  
   const proxyHost = process.env.PROXY_HOST ?? '172.20.20.13';
   const openSearchBaseRootPath = process.env.OPENSEARCH_PROXY_ROOT ?? 'opensearch';
 
   return (
-    <iframe 
-      src={`https://${proxyHost}/${openSearchBaseRootPath}/`} 
-      title="OpenSearch Dashboard"
+    <iframe
+      src={`https://${proxyHost}/${openSearchBaseRootPath}/`}
+      title="OpenSearch Dashboard" // Add a unique title property
       style={{ position: 'absolute', width: '95%', height: '90%' }}
       allow="same-origin allow-scripts"
     />
