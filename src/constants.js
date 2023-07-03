@@ -1,2 +1,2 @@
-const OPENSEARCH_REPORTS_MAIN_MENU_CONTRIBUTION_KEY = 'openSearchReports.MainMenu';
-export default OPENSEARCH_REPORTS_MAIN_MENU_CONTRIBUTION_KEY;
+/* eslint-disable */
+export const OPENSEARCH_REPORTS_MAIN_MENU_CONTRIBUTION_KEY = 'openSearchReports.MainMenu';
