@@ -26,5 +26,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default injectIntl(
-  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(OpenSearchReportsPages))))
+  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(OpenSearchReportsPages)))),
 );
