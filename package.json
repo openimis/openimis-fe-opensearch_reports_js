@@ -1,5 +1,5 @@
 {
-  "name": "@openimis/fe-opensearch_reports_js",
+  "name": "@openimis/fe-opensearch_reports",
   "version": "0.1.0",
   "license": "AGPL-3.0-only",
   "description": "openIMIS Frontend OpenSearch reports module",
@@ -15,6 +15,9 @@
     "start": "rollup -c -w",
     "format": "prettier src -w",
     "prepare":"npm run build"
+  },
+  "peerDependency": {
+    "react-intl": "^5.8.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -32,7 +35,6 @@
     "moment": "^2.25.3",
     "prop-types": "^15.7.2",
     "react-autosuggest": "^10.0.2",
-    "react-intl": "^2.9.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-api-middleware": "^3.2.1",
