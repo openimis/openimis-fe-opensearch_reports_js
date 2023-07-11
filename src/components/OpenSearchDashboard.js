@@ -9,7 +9,7 @@ function OpenSearchDashboard() {
     <iframe
       src={`https://${currentHostname}/${openSearchBaseRootPath}/`}
       title="OpenSearch Dashboard" // Add a unique title property
-      style={{ position: 'absolute', width: '85%', height: '90%' }}
+      style={{ position: 'absolute', width: '80%', height: '90%' }}
       allow="same-origin allow-scripts"
     />
   );
