@@ -19,14 +19,20 @@ In development mode, you can use `npm link` and `npm start` to continuously scan
   * Run the backend and frontend services with opensearch and opensearch-dashboards services.
 
 ## Main Menu Contributions
+**Open Search Reports** (openSearchReports.openSearch key)
+* Open Search Reports (openSearchReports.openSearch key) 
 
 ## Other Contributions
+core.Router: registering openSearchReports, route in openIMIS client-side router
+
 
 ## Available Contribution Points
 
 ## Dispatched Redux Actions
 
 ## Other Modules Listened Redux Actions
+
+state.core.user, to access user info (rights,...)
 
 ## Other Modules Redux State Bindings
 
