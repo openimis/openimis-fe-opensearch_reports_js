@@ -1,3 +1,7 @@
 {
-    "openSearchReports.openSearch": "Dashboards"
+    "openSearchReports.openSearch": "Dashboards",
+    "openSearchReports.openSearch.beneficiaryReports": "Beneficiary Reports",
+    "openSearchReports.openSearch.invoiceReports": "Invoice Reports",
+    "openSearchReports.openSearch.paymentReports": "Payment Reports",
+    "openSearchReports.openSearch.grievanceReports": "Grievance Reports"
 }

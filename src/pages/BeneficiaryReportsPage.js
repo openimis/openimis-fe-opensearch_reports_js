@@ -10,13 +10,14 @@ const styles = (theme) => ({
   fab: theme.fab,
 });
 
-function OpenSearchReportsPages(props) {
+function BeneficiaryReportsPages(props) {
   const { intl, classes } = props;
-
   return (
     <div className={classes.page}>
       <Helmet title={formatMessage(intl, 'openSearchReports', 'openSearch')} />
-      <OpenSearchDashboard />
+      <OpenSearchDashboard
+        dashboardUrl="goto/f36ce4c256637ca76cc31db315696e5a?security_tenant=private"
+      />
     </div>
   );
 }
@@ -26,5 +27,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default injectIntl(
-  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(OpenSearchReportsPages)))),
+  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(BeneficiaryReportsPages)))),
 );
