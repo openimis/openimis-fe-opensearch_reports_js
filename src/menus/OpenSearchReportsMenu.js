@@ -28,7 +28,7 @@ function OpenSearchReportsMenu(props) {
       route: '/paymentReports',
     },
     {
-      text: formatMessage(props.intl, 'openSearchReports', 'openSearch.grievance'),
+      text: formatMessage(props.intl, 'openSearchReports', 'openSearch.grievanceReports'),
       icon: <Tune />,
       route: '/grievanceReports',
     },
