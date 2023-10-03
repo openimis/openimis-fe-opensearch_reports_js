@@ -1,10 +1,10 @@
 import React from 'react';
 
 /* eslint-disable */
-function OpenSearchDashboard(dashboardUrl) {
+function OpenSearchDashboard(props) {
   const currentHostname = window.location.hostname;
   const openSearchBaseRootPath = process.env.OPENSEARCH_PROXY_ROOT ?? 'opensearch';
-
+  const dashboardUrl = props.dashboardUrl;
   return (
     <iframe
       src={`https://${currentHostname}/${openSearchBaseRootPath}/${dashboardUrl}`}
