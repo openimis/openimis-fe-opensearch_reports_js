@@ -4,19 +4,22 @@ import { injectIntl } from 'react-intl';
 import { withTheme, withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import OpenSearchDashboard from '../components/OpenSearchDashboard';
+import { GRIEVANCE_REPORTS_URL } from '../constants';
 
 const styles = (theme) => ({
   page: theme.page,
   fab: theme.fab,
 });
 
-function OpenSearchReportsPages(props) {
+function GrievanceReportsPages(props) {
   const { intl, classes } = props;
 
   return (
     <div className={classes.page}>
       <Helmet title={formatMessage(intl, 'openSearchReports', 'openSearch')} />
-      <OpenSearchDashboard />
+      <OpenSearchDashboard
+        dashboardUrl={GRIEVANCE_REPORTS_URL}
+      />
     </div>
   );
 }
@@ -26,5 +29,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default injectIntl(
-  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(OpenSearchReportsPages)))),
+  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(GrievanceReportsPages)))),
 );

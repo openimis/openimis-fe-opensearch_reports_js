@@ -18,6 +18,11 @@ In development mode, you can use `npm link` and `npm start` to continuously scan
     - `ENV OPENSEARCH_PROXY_ROOT="opensearch"`
   * Run the backend and frontend services with opensearch and opensearch-dashboards services.
 
+### How to Log in as an Admin to OpenSearch?
+* Enter the `<host-url>/opensearch` path in your web browser's URL bar, where host-url corresponds to the host where your server is deployed.
+* Provide your admin credentials.
+* You can now make modifications to dashboards and visualizations.
+
 ## Main Menu Contributions
 **Open Search Reports** (openSearchReports.openSearch key)
 * Open Search Reports (openSearchReports.openSearch key) 
