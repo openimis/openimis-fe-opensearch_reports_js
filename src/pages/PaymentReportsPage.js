@@ -4,6 +4,7 @@ import { injectIntl } from 'react-intl';
 import { withTheme, withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import OpenSearchDashboard from '../components/OpenSearchDashboard';
+import { PAYMENT_REPORTS_URL } from '../constants';
 
 const styles = (theme) => ({
   page: theme.page,
@@ -16,7 +17,7 @@ function PaymentReportsPages(props) {
     <div className={classes.page}>
       <Helmet title={formatMessage(intl, 'openSearchReports', 'openSearch')} />
       <OpenSearchDashboard
-        dashboardUrl="goto/1e2d392d68907f9900f10e6289cb322f?security_tenant=private"
+        dashboardUrl={PAYMENT_REPORTS_URL}
       />
     </div>
   );
