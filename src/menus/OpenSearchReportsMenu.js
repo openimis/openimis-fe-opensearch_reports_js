@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { injectIntl } from 'react-intl';
 import { Tune, DoubleArrow, Person } from '@material-ui/icons';
 import PaymentIcon from '@material-ui/icons/Payment';
+import ToolIcon from '@material-ui/icons/Build';
 import { formatMessage, MainMenuContribution, withModulesManager } from '@openimis/fe-core';
 import { OPENSEARCH_REPORTS_MAIN_MENU_CONTRIBUTION_KEY } from '../constants';
 
@@ -31,6 +32,11 @@ function OpenSearchReportsMenu(props) {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.grievanceReports'),
       icon: <Tune />,
       route: '/grievanceReports',
+    },
+    {
+      text: formatMessage(props.intl, 'openSearchReports', 'openSearch.openSearchConfig'),
+      icon: <ToolIcon />,
+      route: '/dashboardConfiguration',
     },
   ];
   entries.push(
