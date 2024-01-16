@@ -3,5 +3,13 @@
     "openSearchReports.openSearch.beneficiaryReports": "Beneficiary Reports",
     "openSearchReports.openSearch.invoiceReports": "Invoice Reports",
     "openSearchReports.openSearch.paymentReports": "Payment Reports",
-    "openSearchReports.openSearch.grievanceReports": "Grievance Reports"
+    "openSearchReports.openSearch.grievanceReports": "Grievance Reports",
+    "openSearchReports.openSearch.searcherResultsTitle": "Manage Reports and Dashboards",
+    "openSearchReports.openSearch.openSearchConfig": "Manage Dashboards",
+    "openSearchReports.dashboard.edit": "Edit Dashboard",
+    "openSearchReports.dashboard.name": "Dashboard Name",
+    "openSearchReports.dashboard.url": "Dashboard URL",
+    "openSearchReports.dialog.save": "Save",
+    "openSearchReports.dialog.cancel": "Cancel",
+    "openSearchReports.dialog.title": "Edit Details - {dashboardName}"
 }
