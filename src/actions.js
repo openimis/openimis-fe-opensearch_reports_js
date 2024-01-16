@@ -47,7 +47,7 @@ export function updateOpenSearchDashboard(dashboard, clientMutationLabel) {
     mutation.payload,
     [REQUEST(ACTION_TYPE.MUTATION), SUCCESS(ACTION_TYPE.UPDATE_OPENSEARCH_DASHBOARD), ERROR(ACTION_TYPE.MUTATION)],
     {
-      actionType: ACTION_TYPE.UPDATE_BENEFIT_PLAN,
+      actionType: ACTION_TYPE.UPDATE_OPENSEARCH_DASHBOARD,
       clientMutationId: mutation.clientMutationId,
       clientMutationLabel,
       requestedDateTime,
