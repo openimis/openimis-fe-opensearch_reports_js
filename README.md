@@ -42,3 +42,25 @@ state.core.user, to access user info (rights,...)
 ## Other Modules Redux State Bindings
 
 ## Configurations Options
+
+## Updating Dashboard Path in OpenSearch
+
+### Steps:
+
+1. **Navigate to Dashboards -> Configure Dashboards.**
+
+2. In the displayed table, find the list of available dashboards.
+
+3. Click on the 'Edit' option for the specific dashboard you wish to modify.
+
+4. **Edit Path:**
+    - Go to the OpenSearch dashboard you want to link, e.g., [Example Dashboard Link](https://coremis.s1.openimis.org/opensearch/app/dashboards#/view/0339e180-5e9f-11ee-a1ac-3fafee93e8af?[...]).
+    - Click on the 'Share' button at the top-right menu and select the 'short' link option.
+    - In the small modal, choose the 'short' link option and click 'Copy Link'.
+    - Paste the link obtained from the 'Share' button into a text editor or directly into the 'Edit Link' modal.
+
+5. From the link obtained in the previous step, e.g. 'https://coremis.s1.openimis.org/opensearch/goto/6084fcd3b4d8c75cabd17a03a62d6bcb?security_tenant=private', extract the path from 'goto', for example, 'goto/6084fcd3b4d8c75cabd17a03a62d6bcb?security_tenant=private'.
+
+6. Edit the path in the modal form and click 'Save'.
+
+7. The table is now updated. Navigate to, for example, Beneficiary Reports, to view the new dashboard in the respective report page.
