@@ -1,10 +1,12 @@
 /* eslint-disable */
 export const OPENSEARCH_REPORTS_MAIN_MENU_CONTRIBUTION_KEY = 'openSearchReports.MainMenu';
 
-export const BENEFICIARY_REPORTS = 'Beneficiary'
-export const GRIEVANCE_REPORTS = 'Grievance'
-export const INVOICE_REPORTS = 'Invoice'
-export const PAYMENT_REPORTS = 'Payment'
+export const BENEFICIARY_REPORTS = 'Beneficiary';
+export const GRIEVANCE_REPORTS = 'Grievance';
+export const INVOICE_REPORTS = 'Invoice';
+export const PAYMENT_REPORTS = 'Payment';
+export const INDIVIDUAL_REPORTS = 'Individual';
+export const GROUPS_REPORTS = 'Group';
 
 export const BENEFICIARY_REPORTS_URL = 'goto/f36ce4c256637ca76cc31db315696e5a?security_tenant=private';
 export const GRIEVANCE_REPORTS_URL = 'goto/07f453c884ec6b24eaa5e44df8fee4e5?security_tenant=private';
