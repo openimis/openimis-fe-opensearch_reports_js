@@ -4,7 +4,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { injectIntl } from 'react-intl';
-import { Tune, DoubleArrow, Person } from '@material-ui/icons';
+import { Tune, DoubleArrow, Person, People } from '@material-ui/icons';
 import PaymentIcon from '@material-ui/icons/Payment';
 import ToolIcon from '@material-ui/icons/Build';
 import { formatMessage, MainMenuContribution, withModulesManager } from '@openimis/fe-core';
@@ -13,6 +13,16 @@ import { OPENSEARCH_REPORTS_MAIN_MENU_CONTRIBUTION_KEY } from '../constants';
 function OpenSearchReportsMenu(props) {
   // TO-DO add rights
   const entries = [
+    {
+      text: formatMessage(props.intl, 'openSearchReports', 'openSearch.individualReports'),
+      icon: <Person />,
+      route: '/individualReports',
+    },
+    {
+      text: formatMessage(props.intl, 'openSearchReports', 'openSearch.groupReports'),
+      icon: <People />,
+      route: '/groupReports',
+    },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.beneficiaryReports'),
       icon: <Person />,
