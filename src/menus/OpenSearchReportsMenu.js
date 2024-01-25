@@ -21,7 +21,7 @@ function OpenSearchReportsMenu(props) {
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.groupReports'),
       icon: <People />,
-      route: '/groupConfiguration',
+      route: '/groupReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.beneficiaryReports'),
