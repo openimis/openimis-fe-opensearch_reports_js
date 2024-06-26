@@ -4,15 +4,23 @@ import GrievanceReportsPage from './pages/GrievanceReportsPage';
 import InvoiceReportsPage from './pages/InvoiceReportsPage';
 import PaymentReportsPage from './pages/PaymentReportsPage';
 import OpenSearchReportsMenu from './menus/OpenSearchReportsMenu';
+import OpenSearchDashboardConfigPage from './pages/OpenSearchDashboardConfigPage';
+import reducer from './reducer';
+import IndividualReportsPage from './pages/IndividualReportsPage';
+import GroupReportsPage from './pages/GroupReportsPage';
 
 const DEFAULT_CONFIG = {
   translations: [{ key: 'en', messages: messagesEn }],
+  reducers: [{ key: 'openSearchReports', reducer }],
   'core.MainMenu': [OpenSearchReportsMenu],
   'core.Router': [
+    { path: 'individualReports', component: IndividualReportsPage },
+    { path: 'groupReports', component: GroupReportsPage },
     { path: 'beneficiaryReports', component: BeneficiaryReportsPage },
     { path: 'invoiceReports', component: InvoiceReportsPage },
     { path: 'grievanceReports', component: GrievanceReportsPage },
     { path: 'paymentReports', component: PaymentReportsPage },
+    { path: 'dashboardConfiguration', component: OpenSearchDashboardConfigPage },
   ],
 };
 

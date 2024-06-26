@@ -4,7 +4,7 @@ import { Helmet, withModulesManager, formatMessage } from '@openimis/fe-core';
 import { injectIntl } from 'react-intl';
 import { withTheme, withStyles } from '@material-ui/core/styles';
 import OpenSearchDashboard from '../components/OpenSearchDashboard';
-import { GRIEVANCE_REPORTS } from '../constants';
+import { GROUPS_REPORTS } from '../constants';
 import { fetchOpenSearchDashboard } from '../actions';
 
 const styles = (theme) => ({
@@ -12,7 +12,7 @@ const styles = (theme) => ({
   fab: theme.fab,
 });
 
-function GrievanceReportsPages(props) {
+function GroupReportsPages(props) {
   const { intl, classes } = props;
   const dispatch = useDispatch();
   const {
@@ -20,7 +20,7 @@ function GrievanceReportsPages(props) {
   } = useSelector((store) => store.openSearchReports);
 
   useEffect(() => {
-    const params = [`name_Iexact: "${GRIEVANCE_REPORTS}"`];
+    const params = [`name_Iexact: "${GROUPS_REPORTS}"`];
     dispatch(fetchOpenSearchDashboard(params));
   }, []);
 
@@ -39,5 +39,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default injectIntl(
-  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(GrievanceReportsPages)))),
+  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(GroupReportsPages)))),
 );
