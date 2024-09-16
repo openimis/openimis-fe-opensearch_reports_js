@@ -14,10 +14,10 @@ const styles = (theme) => ({
 
 function DataUpdatesReportsPages(props) {
   const { intl, classes } = props;
+
   const dispatch = useDispatch();
-  const {
-    dashboard,
-  } = useSelector((store) => store.openSearchReports);
+  
+  const { dashboard } = useSelector((store) => store.openSearchReports);
 
   useEffect(() => {
     const params = [`name_Iexact: "${DATA_UPDATES_REPORTS}"`];
