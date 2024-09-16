@@ -8,6 +8,7 @@ import OpenSearchDashboardConfigPage from './pages/OpenSearchDashboardConfigPage
 import reducer from './reducer';
 import IndividualReportsPage from './pages/IndividualReportsPage';
 import GroupReportsPage from './pages/GroupReportsPage';
+import DataUpdatesReportsPage from './pages/DataUpdatesReportsPage';
 
 const DEFAULT_CONFIG = {
   translations: [{ key: 'en', messages: messagesEn }],
@@ -19,6 +20,7 @@ const DEFAULT_CONFIG = {
     { path: 'beneficiaryReports', component: BeneficiaryReportsPage },
     { path: 'invoiceReports', component: InvoiceReportsPage },
     { path: 'grievanceReports', component: GrievanceReportsPage },
+    { path: 'dataUpdatesReports', component: DataUpdatesReportsPage },
     { path: 'paymentReports', component: PaymentReportsPage },
     { path: 'dashboardConfiguration', component: OpenSearchDashboardConfigPage },
   ],
