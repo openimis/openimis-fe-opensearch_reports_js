@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 const DEDUPLICATION_SUMMARY_HEADERS = [
   'dashboard.name',
   'dashboard.url',
+  'dashboard.synchDisabled',
 ];
 
 function OpenSearchDashboardTable() {
@@ -82,6 +83,11 @@ function OpenSearchDashboardTable() {
               <TableCell>
                 {' '}
                 {`https://${currentHostname}/${openSearchBaseRootPath}/${dashboard?.url}`}
+                {' '}
+              </TableCell>
+              <TableCell>
+                {' '}
+                {`${dashboard?.synchDisabled}`}
                 {' '}
               </TableCell>
               <TableCell>
