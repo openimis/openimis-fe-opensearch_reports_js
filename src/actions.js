@@ -13,6 +13,7 @@ const OPENSEARCH_DASHBOARDS_FULL_PROJECTION = () => [
   'id',
   'uuid',
   'name',
+  'synchDisabled',
   'url',
   'isDeleted',
   'dateCreated',
@@ -36,6 +37,7 @@ export function fetchOpenSearchDashboard(params) {
 function formatOpenSearchDashboardGQL(openSearchDashboard) {
   return `
       ${openSearchDashboard.id ? `id: "${openSearchDashboard.id}"` : ''}
+      ${`synchDisabled: ${openSearchDashboard.synchDisabled}`}
       ${openSearchDashboard?.name ? `name: "${openSearchDashboard.name}"` : ''}
       ${openSearchDashboard?.url ? `url: "${openSearchDashboard.url}"` : ''}`;
 }

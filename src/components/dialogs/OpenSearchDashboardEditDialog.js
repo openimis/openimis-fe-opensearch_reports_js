@@ -14,7 +14,7 @@ import {
   TextInput,
   formatMessageWithValues,
 } from '@openimis/fe-core';
-import { Grid, IconButton } from '@material-ui/core';
+import { Grid, IconButton, Switch, FormControlLabel } from '@material-ui/core';
 import { withTheme, withStyles } from '@material-ui/core/styles';
 import { fetchOpenSearchDashboard, updateOpenSearchDashboard } from '../../actions';
 import { defaultDialogStyles } from '../../util/styles';
@@ -31,6 +31,7 @@ function OpenSearchDashboardEditDialog({
     id: dashboard.id,
     name: dashboard.name,
     url: dashboard.url,
+    synchDisabled: dashboard.synchDisabled,
   });
 
   const handleOpen = () => setIsOpen(true);
@@ -41,6 +42,7 @@ function OpenSearchDashboardEditDialog({
       id: dashboard.id,
       name: dashboard.name,
       url: dashboard.url,
+      synchDisabled: dashboard.synchDisabled,
     });
   };
 
@@ -100,6 +102,25 @@ function OpenSearchDashboardEditDialog({
                 value={dashboardToEdit?.url}
                 onChange={onAttributeChange('url')}
                 required
+              />
+            </Grid>
+            <Grid item className={classes.item}>
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={dashboardToEdit.synchDisabled} // Checked when synchDisabled is true
+                    onChange={(e) => setDashboardToEdit({
+                      ...dashboardToEdit,
+                      synchDisabled: e.target.checked,  // Directly update the synchDisabled field based on checked state
+                    })}
+                    color="primary"
+                  />
+                }
+                label={
+                  formatMessageWithValues(intl, 'openSearchReports', 'dashboard.synchStatus', {
+                    status: dashboardToEdit.synchDisabled ? 'Disabled' : 'Enabled',
+                  })
+                }
               />
             </Grid>
           </Grid>
