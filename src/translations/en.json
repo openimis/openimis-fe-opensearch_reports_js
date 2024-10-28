@@ -4,6 +4,7 @@
     "openSearchReports.openSearch.invoiceReports": "Invoice Reports",
     "openSearchReports.openSearch.paymentReports": "Payment Reports",
     "openSearchReports.openSearch.grievanceReports": "Grievance Reports",
+    "openSearchReports.openSearch.dataUpdatesReports": "Data Updates Reports",
     "openSearchReports.openSearch.individualReports": "Individual Reports",
     "openSearchReports.openSearch.groupReports": "Group Reports",
     "openSearchReports.openSearch.searcherResultsTitle": "Manage Reports and Dashboards",
@@ -11,6 +12,8 @@
     "openSearchReports.dashboard.edit": "Edit Dashboard",
     "openSearchReports.dashboard.name": "Dashboard Name",
     "openSearchReports.dashboard.url": "Dashboard URL",
+    "openSearchReports.dashboard.synchStatus": "Synchronization Disabled",
+    "openSearchReports.dashboard.synchDisabled": "Synchronization Disabled",
     "openSearchReports.dialog.save": "Save",
     "openSearchReports.dialog.cancel": "Cancel",
     "openSearchReports.dialog.title": "Edit Details - {dashboardName}"

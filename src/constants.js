@@ -7,11 +7,13 @@ export const INVOICE_REPORTS = 'Invoice';
 export const PAYMENT_REPORTS = 'Payment';
 export const INDIVIDUAL_REPORTS = 'Individual';
 export const GROUPS_REPORTS = 'Group';
+export const DATA_UPDATES_REPORTS = 'DataUpdates';
 
 export const BENEFICIARY_REPORTS_URL = 'goto/f36ce4c256637ca76cc31db315696e5a?security_tenant=private';
 export const GRIEVANCE_REPORTS_URL = 'goto/07f453c884ec6b24eaa5e44df8fee4e5?security_tenant=private';
 export const INVOICE_REPORTS_ULR = 'goto/7f28c3e4677054e33090c2306c57f6d9?security_tenant=private';
 export const PAYMENT_REPORTS_URL = 'goto/1e2d392d68907f9900f10e6289cb322f?security_tenant=private';
+export const DATA_UPDATES_REPORTS_URL = 'goto/752b75eda88e2a379a4c23e28fd4b339?security_tenant=global';
 
 export const RIGHT_OPENSEARCH_DASHBOARD_UPDATE = '199003'
 export const DEFAULT_PAGE_SIZE = 10;
