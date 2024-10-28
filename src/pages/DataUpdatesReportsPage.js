@@ -16,7 +16,7 @@ function DataUpdatesReportsPages(props) {
   const { intl, classes } = props;
 
   const dispatch = useDispatch();
-  
+
   const { dashboard } = useSelector((store) => store.openSearchReports);
 
   useEffect(() => {
