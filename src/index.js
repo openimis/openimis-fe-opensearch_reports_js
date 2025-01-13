@@ -13,7 +13,7 @@ import DataUpdatesReportsPage from './pages/DataUpdatesReportsPage';
 const DEFAULT_CONFIG = {
   translations: [{ key: 'en', messages: messagesEn }],
   reducers: [{ key: 'openSearchReports', reducer }],
-  'core.MainMenu': [OpenSearchReportsMenu],
+  'core.MainMenu': [{ name: 'OpenSearchReportsMenu', component: OpenSearchReportsMenu }],
   'core.Router': [
     { path: 'individualReports', component: IndividualReportsPage },
     { path: 'groupReports', component: GroupReportsPage },
