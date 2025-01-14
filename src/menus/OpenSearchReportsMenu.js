@@ -82,6 +82,7 @@ function OpenSearchReportsMenu(props) {
       {...props}
       header={formatMessage(props.intl, 'openSearchReports', 'openSearch')}
       entries={entries}
+      menuId="OpenSearchReportsMenu"
     />
   );
 }
