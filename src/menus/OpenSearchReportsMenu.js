@@ -51,19 +51,19 @@ function OpenSearchReportsMenu(props) {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.paymentReports'),
       icon: <PaymentIcon />,
       route: '/paymentReports',
-      id: 'openSearch.openSearchConfig',
+      id: 'openSearch.paymentReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.grievanceReports'),
       icon: <Tune />,
       route: '/grievanceReports',
-      id: 'openSearch.openSearchConfig',
+      id: 'openSearch.grievanceReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.dataUpdatesReports'),
       icon: <Update />,
       route: '/dataUpdatesReports',
-      id: 'openSearch.openSearchConfig',
+      id: 'openSearch.dataUpdatesReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.openSearchConfig'),
