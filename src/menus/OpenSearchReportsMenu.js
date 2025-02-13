@@ -27,41 +27,49 @@ function OpenSearchReportsMenu(props) {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.individualReports'),
       icon: <Person />,
       route: '/individualReports',
+      id: 'openSearch.individualReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.groupReports'),
       icon: <People />,
       route: '/groupReports',
+      id: 'openSearch.groupReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.beneficiaryReports'),
       icon: <Person />,
       route: '/beneficiaryReports',
+      id: 'openSearch.beneficiaryReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.invoiceReports'),
       icon: <DoubleArrow />,
       route: '/invoiceReports',
+      id: 'openSearch.invoiceReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.paymentReports'),
       icon: <PaymentIcon />,
       route: '/paymentReports',
+      id: 'openSearch.paymentReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.grievanceReports'),
       icon: <Tune />,
       route: '/grievanceReports',
+      id: 'openSearch.grievanceReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.dataUpdatesReports'),
       icon: <Update />,
       route: '/dataUpdatesReports',
+      id: 'openSearch.dataUpdatesReports',
     },
     {
       text: formatMessage(props.intl, 'openSearchReports', 'openSearch.openSearchConfig'),
       icon: <ToolIcon />,
       route: '/dashboardConfiguration',
+      id: 'openSearch.openSearchConfig',
     },
   ];
   entries.push(
@@ -74,6 +82,7 @@ function OpenSearchReportsMenu(props) {
       {...props}
       header={formatMessage(props.intl, 'openSearchReports', 'openSearch')}
       entries={entries}
+      menuId="OpenSearchReportsMenu"
     />
   );
 }
