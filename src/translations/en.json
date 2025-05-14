@@ -16,5 +16,7 @@
     "openSearchReports.dashboard.synchDisabled": "Synchronization Disabled",
     "openSearchReports.dialog.save": "Save",
     "openSearchReports.dialog.cancel": "Cancel",
-    "openSearchReports.dialog.title": "Edit Details - {dashboardName}"
+    "openSearchReports.dialog.title": "Edit Details - {dashboardName}",
+    "opensearch_reports.gql_opensearch_dashboard_search_perms": "Opensearch Reports | Opensearch Dashboard Search",
+    "opensearch_reports.gql_opensearch_dashboard_update_perms": "Opensearch Reports | Opensearch Dashboard Update"
 }
