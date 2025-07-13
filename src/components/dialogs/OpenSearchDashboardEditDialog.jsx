@@ -3,12 +3,12 @@ import { injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { bindActionCreators } from 'redux';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import EditIcon from '@material-ui/icons/Edit';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import EditIcon from '@mui/icons-material/Edit';
 import {
   FormattedMessage,
   TextInput,
@@ -16,8 +16,8 @@ import {
 } from '@openimis/fe-core';
 import {
   Grid, IconButton, Switch, FormControlLabel,
-} from '@material-ui/core';
-import { withTheme, withStyles } from '@material-ui/core/styles';
+} from '@mui/material';
+import { withTheme, withStyles } from '@mui/material/styles';
 import { fetchOpenSearchDashboard, updateOpenSearchDashboard } from '../../actions';
 import { defaultDialogStyles } from '../../util/styles';
 

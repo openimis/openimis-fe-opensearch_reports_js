@@ -1,14 +1,12 @@
 /* eslint-disable react/react-in-jsx-scope */
 import React from 'react';
-import {
-  Tune,
-  DoubleArrow,
-  Person,
-  People,
-  Update,
-} from '@material-ui/icons';
-import PaymentIcon from '@material-ui/icons/Payment';
-import ToolIcon from '@material-ui/icons/Build';
+import Tune from '@mui/icons-material/Tune';
+import DoubleArrow from '@mui/icons-material/DoubleArrow';
+import Person from '@mui/icons-material/Person';
+import People from '@mui/icons-material/People';
+import Update from '@mui/icons-material/Update';
+import PaymentIcon from '@mui/icons-material/Payment';
+import ToolIcon from '@mui/icons-material/Build';
 import { FormattedMessage } from '@openimis/fe-core';
 import messagesEn from './translations/en.json';
 import BeneficiaryReportsPage from './pages/BeneficiaryReportsPage';

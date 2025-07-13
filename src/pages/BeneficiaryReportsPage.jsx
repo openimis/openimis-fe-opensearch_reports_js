@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
 import { Helmet, withModulesManager, formatMessage } from '@openimis/fe-core';
 import { injectIntl } from 'react-intl';
-import { withTheme, withStyles } from '@material-ui/core/styles';
+import { withTheme, withStyles } from '@mui/material/styles';
 import OpenSearchDashboard from '../components/OpenSearchDashboard';
 import { BENEFICIARY_REPORTS } from '../constants';
 import { fetchOpenSearchDashboard } from '../actions';
