@@ -17,7 +17,8 @@ import {
 import {
   Grid, IconButton, Switch, FormControlLabel,
 } from '@mui/material';
-import { withTheme, withStyles } from '@mui/material/styles';
+import { withTheme } from '@mui/styles';
+import { withStyles } from '@mui/styles';
 import { fetchOpenSearchDashboard, updateOpenSearchDashboard } from '../../actions';
 import { defaultDialogStyles } from '../../util/styles';
 

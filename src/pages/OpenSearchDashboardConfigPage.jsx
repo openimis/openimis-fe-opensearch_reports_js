@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet, withModulesManager, formatMessage } from '@openimis/fe-core';
 import { injectIntl } from 'react-intl';
-import { withTheme, withStyles } from '@mui/material/styles';
+import { withTheme } from '@mui/styles';
+import { withStyles } from '@mui/styles';
 import { connect } from 'react-redux';
 import OpenSearchDashboardTable from '../components/tables/OpenSearchDashboardTable';
 
