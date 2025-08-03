@@ -2,19 +2,18 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
 import { Helmet, withModulesManager, formatMessage } from '@openimis/fe-core';
 import { injectIntl } from 'react-intl';
-import { withTheme } from '@mui/styles';
-import { withStyles } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import OpenSearchDashboard from '../components/OpenSearchDashboard';
 import { INVOICE_REPORTS } from '../constants';
 import { fetchOpenSearchDashboard } from '../actions';
 
-const styles = (theme) => ({
-  page: theme.page,
-  fab: theme.fab,
-});
+const StyledInvoiceReportsPages = styled('div')(({ theme }) => ({
+  ...theme.page,
+  '& .fab': theme.fab,
+}));
 
-function GrievanceReportsPages(props) {
-  const { intl, classes } = props;
+function InvoiceReportsPages(props) {
+  const { intl } = props;
   const dispatch = useDispatch();
   const {
     dashboard,
@@ -26,12 +25,12 @@ function GrievanceReportsPages(props) {
   }, []);
 
   return (
-    <div className={classes.page}>
+    <StyledInvoiceReportsPages>
       <Helmet title={formatMessage(intl, 'openSearchReports', 'openSearch')} />
       <OpenSearchDashboard
         dashboardUrl={dashboard?.url}
       />
-    </div>
+    </StyledInvoiceReportsPages>
   );
 }
 
@@ -40,5 +39,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default injectIntl(
-  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(GrievanceReportsPages)))),
+  withModulesManager(connect(mapStateToProps)(InvoiceReportsPages)),
 );

@@ -17,14 +17,15 @@ import {
 import {
   Grid, IconButton, Switch, FormControlLabel,
 } from '@mui/material';
-import { withTheme } from '@mui/styles';
-import { withStyles } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { fetchOpenSearchDashboard, updateOpenSearchDashboard } from '../../actions';
-import { defaultDialogStyles } from '../../util/styles';
+
+const StyledOpenSearchDashboardEditDialog = styled('div')(({ theme }) => ({
+  '& .item': theme.paper.item,
+}));
 
 function OpenSearchDashboardEditDialog({
   intl,
-  classes,
   dashboard,
   setIsUpdated,
   updateOpenSearchDashboard,
@@ -69,7 +70,7 @@ function OpenSearchDashboardEditDialog({
   const canSave = !!dashboardToEdit?.url;
 
   return (
-    <>
+    <StyledOpenSearchDashboardEditDialog>
       <IconButton
         onClick={handleOpen}
       >
@@ -89,8 +90,8 @@ function OpenSearchDashboardEditDialog({
           {formatMessageWithValues(intl, 'openSearchReports', 'dialog.title', { dashboardName: dashboard.name })}
         </DialogTitle>
         <DialogContent>
-          <Grid container direction="column" className={classes.item}>
-            <Grid item className={classes.item}>
+          <Grid container direction="column" className="item">
+            <Grid item className="item">
               <TextInput
                 module="openSearchReports"
                 label="dashboard.name"
@@ -98,7 +99,7 @@ function OpenSearchDashboardEditDialog({
                 readOnly
               />
             </Grid>
-            <Grid item className={classes.item}>
+            <Grid item className="item">
               <TextInput
                 module="openSearchReports"
                 label="dashboard.url"
@@ -107,7 +108,7 @@ function OpenSearchDashboardEditDialog({
                 required
               />
             </Grid>
-            <Grid item className={classes.item}>
+            <Grid item className="item">
               <FormControlLabel
                 control={(
                   <Switch
@@ -137,7 +138,7 @@ function OpenSearchDashboardEditDialog({
           </Button>
         </DialogActions>
       </Dialog>
-    </>
+    </StyledOpenSearchDashboardEditDialog>
   );
 }
 
@@ -147,5 +148,5 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
 }, dispatch);
 
 export default injectIntl(
-  withTheme(withStyles(defaultDialogStyles)(connect(null, mapDispatchToProps)(OpenSearchDashboardEditDialog))),
+  connect(null, mapDispatchToProps)(OpenSearchDashboardEditDialog),
 );

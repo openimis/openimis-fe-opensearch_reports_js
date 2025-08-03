@@ -1,23 +1,22 @@
 import React from 'react';
 import { Helmet, withModulesManager, formatMessage } from '@openimis/fe-core';
 import { injectIntl } from 'react-intl';
-import { withTheme } from '@mui/styles';
-import { withStyles } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { connect } from 'react-redux';
 import OpenSearchDashboardTable from '../components/tables/OpenSearchDashboardTable';
 
-const styles = (theme) => ({
-  page: theme.page,
-  fab: theme.fab,
-});
+const StyledOpenSearchDashboardConfigPage = styled('div')(({ theme }) => ({
+  ...theme.page,
+  '& .fab': theme.fab,
+}));
 
 function OpenSearchDashboardConfigPage(props) {
-  const { intl, classes } = props;
+  const { intl } = props;
   return (
-    <div className={classes.page}>
+    <StyledOpenSearchDashboardConfigPage>
       <Helmet title={formatMessage(intl, 'openSearch', 'openSearchConfig')} />
       <OpenSearchDashboardTable />
-    </div>
+    </StyledOpenSearchDashboardConfigPage>
   );
 }
 
@@ -26,5 +25,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default injectIntl(
-  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(OpenSearchDashboardConfigPage)))),
+  withModulesManager(connect(mapStateToProps)(OpenSearchDashboardConfigPage)),
 );

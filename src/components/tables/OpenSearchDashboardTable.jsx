@@ -5,22 +5,22 @@ import {
   TableContainer, TableHead, TableBody, Table,
   TableCell, TableRow, Paper, Tooltip,
 } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { useModulesManager, ProgressOrError, useTranslations } from '@openimis/fe-core';
 import { MODULE_NAME } from '../../constants';
 import { fetchOpenSearchDashboards } from '../../actions';
 import OpenSearchDashboardEditDialog from '../dialogs/OpenSearchDashboardEditDialog';
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
+const StyledOpenSearchDashboardTable = styled('div')(({ theme }) => ({
+  '& .footer': {
     marginInline: 16,
     marginBlock: 12,
   },
-  headerTitle: theme.table.title,
-  actionCell: {
+  '& .headerTitle': theme.table.title,
+  '& .actionCell': {
     width: 60,
   },
-  header: theme.table.header,
+  '& .header': theme.table.header,
 }));
 
 const DEDUPLICATION_SUMMARY_HEADERS = [
@@ -32,7 +32,6 @@ const DEDUPLICATION_SUMMARY_HEADERS = [
 function OpenSearchDashboardTable() {
   const dispatch = useDispatch();
   const modulesManager = useModulesManager();
-  const classes = useStyles();
   const { formatMessage } = useTranslations(MODULE_NAME, modulesManager);
   const {
     fetchingDashboards, dashboards, errorDashboards,
@@ -53,58 +52,60 @@ function OpenSearchDashboardTable() {
   }, [isUpdated]);
 
   return (
-    <TableContainer component={Paper}>
-      <Table size="small">
-        <TableHead className={classes.header}>
-          <TableRow className={classes.headerTitle}>
-            {DEDUPLICATION_SUMMARY_HEADERS.map((header) => (
-              <TableCell key={header}>
+    <StyledOpenSearchDashboardTable>
+      <TableContainer component={Paper}>
+        <Table size="small">
+          <TableHead className="header">
+            <TableRow className="headerTitle">
+              {DEDUPLICATION_SUMMARY_HEADERS.map((header) => (
+                <TableCell key={header}>
+                  {' '}
+                  {formatMessage(header)}
+                  {' '}
+                </TableCell>
+              ))}
+              <TableCell key="dashboard.edit">
                 {' '}
-                {formatMessage(header)}
-                {' '}
-              </TableCell>
-            ))}
-            <TableCell key="dashboard.edit">
-              {' '}
-              {formatMessage('dashboard.edit')}
-              {' '}
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <ProgressOrError progress={fetchingDashboards} error={errorDashboards} />
-          {dashboards?.map((dashboard) => (
-            <TableRow key={dashboard?.name}>
-              <TableCell>
-                {' '}
-                {dashboard?.name}
-                {' '}
-              </TableCell>
-              <TableCell>
-                {' '}
-                {`https://${currentHostname}/${openSearchBaseRootPath}/${dashboard?.url}`}
-                {' '}
-              </TableCell>
-              <TableCell>
-                {' '}
-                {`${dashboard?.synchDisabled}`}
-                {' '}
-              </TableCell>
-              <TableCell>
-                {' '}
-                <Tooltip title={formatMessage('editButtonTooltip')}>
-                  <OpenSearchDashboardEditDialog
-                    dashboard={dashboard}
-                    setIsUpdated={setIsUpdated}
-                  />
-                </Tooltip>
+                {formatMessage('dashboard.edit')}
                 {' '}
               </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            <ProgressOrError progress={fetchingDashboards} error={errorDashboards} />
+            {dashboards?.map((dashboard) => (
+              <TableRow key={dashboard?.name}>
+                <TableCell>
+                  {' '}
+                  {dashboard?.name}
+                  {' '}
+                </TableCell>
+                <TableCell>
+                  {' '}
+                  {`https://${currentHostname}/${openSearchBaseRootPath}/${dashboard?.url}`}
+                  {' '}
+                </TableCell>
+                <TableCell>
+                  {' '}
+                  {`${dashboard?.synchDisabled}`}
+                  {' '}
+                </TableCell>
+                <TableCell>
+                  {' '}
+                  <Tooltip title={formatMessage('editButtonTooltip')}>
+                    <OpenSearchDashboardEditDialog
+                      dashboard={dashboard}
+                      setIsUpdated={setIsUpdated}
+                    />
+                  </Tooltip>
+                  {' '}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </StyledOpenSearchDashboardTable>
   );
 }
 

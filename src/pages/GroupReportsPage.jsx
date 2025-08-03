@@ -2,19 +2,18 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
 import { Helmet, withModulesManager, formatMessage } from '@openimis/fe-core';
 import { injectIntl } from 'react-intl';
-import { withTheme } from '@mui/styles';
-import { withStyles } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import OpenSearchDashboard from '../components/OpenSearchDashboard';
 import { GROUPS_REPORTS } from '../constants';
 import { fetchOpenSearchDashboard } from '../actions';
 
-const styles = (theme) => ({
-  page: theme.page,
-  fab: theme.fab,
-});
+const StyledGroupReportsPages = styled('div')(({ theme }) => ({
+  ...theme.page,
+  '& .fab': theme.fab,
+}));
 
 function GroupReportsPages(props) {
-  const { intl, classes } = props;
+  const { intl } = props;
   const dispatch = useDispatch();
   const {
     dashboard,
@@ -26,12 +25,12 @@ function GroupReportsPages(props) {
   }, []);
 
   return (
-    <div className={classes.page}>
+    <StyledGroupReportsPages>
       <Helmet title={formatMessage(intl, 'openSearchReports', 'openSearch')} />
       <OpenSearchDashboard
         dashboardUrl={dashboard?.url}
       />
-    </div>
+    </StyledGroupReportsPages>
   );
 }
 
@@ -40,5 +39,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default injectIntl(
-  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(GroupReportsPages)))),
+  withModulesManager(connect(mapStateToProps)(GroupReportsPages)),
 );
