@@ -32,5 +32,7 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
   },
-  plugins: [react()],
+  plugins: [react({
+    jsxRuntime: 'automatic',
+  })],
 });
