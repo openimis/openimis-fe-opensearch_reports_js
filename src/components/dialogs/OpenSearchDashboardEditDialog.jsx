@@ -91,7 +91,7 @@ function OpenSearchDashboardEditDialog({
         </DialogTitle>
         <DialogContent>
           <Grid container direction="column" className="item">
-            <Grid item className="item">
+            <Grid className="item">
               <TextInput
                 module="openSearchReports"
                 label="dashboard.name"
@@ -99,7 +99,7 @@ function OpenSearchDashboardEditDialog({
                 readOnly
               />
             </Grid>
-            <Grid item className="item">
+            <Grid className="item">
               <TextInput
                 module="openSearchReports"
                 label="dashboard.url"
@@ -108,7 +108,7 @@ function OpenSearchDashboardEditDialog({
                 required
               />
             </Grid>
-            <Grid item className="item">
+            <Grid className="item">
               <FormControlLabel
                 control={(
                   <Switch
@@ -147,6 +147,7 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
   fetchOpenSearchDashboard,
 }, dispatch);
 
+export { StyledOpenSearchDashboardEditDialog };
 export default injectIntl(
   connect(null, mapDispatchToProps)(OpenSearchDashboardEditDialog),
 );

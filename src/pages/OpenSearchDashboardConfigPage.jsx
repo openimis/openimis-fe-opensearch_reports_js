@@ -14,7 +14,7 @@ function OpenSearchDashboardConfigPage(props) {
   const { intl } = props;
   return (
     <StyledOpenSearchDashboardConfigPage>
-      <Helmet title={formatMessage(intl, 'openSearch', 'openSearchConfig')} />
+      <Helmet title={formatMessage(intl, 'openSearchReports', 'openSearch.openSearchConfig')} />
       <OpenSearchDashboardTable />
     </StyledOpenSearchDashboardConfigPage>
   );
@@ -24,6 +24,7 @@ const mapStateToProps = (state) => ({
   rights: !!state.core && !!state.core.user && !!state.core.user.i_user ? state.core.user.i_user.rights : [],
 });
 
+export { StyledOpenSearchDashboardConfigPage };
 export default injectIntl(
   withModulesManager(connect(mapStateToProps)(OpenSearchDashboardConfigPage)),
 );

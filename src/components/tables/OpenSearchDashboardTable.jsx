@@ -72,7 +72,13 @@ function OpenSearchDashboardTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            <ProgressOrError progress={fetchingDashboards} error={errorDashboards} />
+            {(fetchingDashboards || errorDashboards) && (
+              <TableRow>
+                <TableCell colSpan={DEDUPLICATION_SUMMARY_HEADERS.length + 1}>
+                  <ProgressOrError progress={fetchingDashboards} error={errorDashboards} />
+                </TableCell>
+              </TableRow>
+            )}
             {dashboards?.map((dashboard) => (
               <TableRow key={dashboard?.name}>
                 <TableCell>
