@@ -8,8 +8,8 @@ import { BENEFICIARY_REPORTS } from '../constants';
 import { fetchOpenSearchDashboard } from '../actions';
 
 const StyledBeneficiaryReportsPages = styled('div')(({ theme }) => ({
-  ...theme.page,
-  '& .fab': theme.fab,
+  ...(theme?.page ?? {}),
+  '& .fab': theme?.fab ?? {},
 }));
 
 function BeneficiaryReportsPages(props) {

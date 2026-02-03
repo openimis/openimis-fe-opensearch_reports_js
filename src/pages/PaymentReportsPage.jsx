@@ -8,8 +8,8 @@ import { PAYMENT_REPORTS } from '../constants';
 import { fetchOpenSearchDashboard } from '../actions';
 
 const StyledPaymentReportsPages = styled('div')(({ theme }) => ({
-  ...theme.page,
-  '& .fab': theme.fab,
+  ...(theme?.page ?? {}),
+  '& .fab': theme?.fab ?? {},
 }));
 
 function PaymentReportsPages(props) {

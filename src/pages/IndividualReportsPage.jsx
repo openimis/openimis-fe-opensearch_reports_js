@@ -8,8 +8,8 @@ import { INDIVIDUAL_REPORTS } from '../constants';
 import { fetchOpenSearchDashboard } from '../actions';
 
 const StyledIndividualReportsPages = styled('div')(({ theme }) => ({
-  ...theme.page,
-  '& .fab': theme.fab,
+  ...(theme?.page ?? {}),
+  '& .fab': theme?.fab ?? {},
 }));
 
 function IndividualReportsPages(props) {

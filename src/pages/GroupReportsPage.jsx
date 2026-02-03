@@ -8,8 +8,8 @@ import { GROUPS_REPORTS } from '../constants';
 import { fetchOpenSearchDashboard } from '../actions';
 
 const StyledGroupReportsPages = styled('div')(({ theme }) => ({
-  ...theme.page,
-  '& .fab': theme.fab,
+  ...(theme?.page ?? {}),
+  '& .fab': theme?.fab ?? {},
 }));
 
 function GroupReportsPages(props) {

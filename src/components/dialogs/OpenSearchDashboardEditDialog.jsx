@@ -21,7 +21,7 @@ import { styled } from '@mui/material/styles';
 import { fetchOpenSearchDashboard, updateOpenSearchDashboard } from '../../actions';
 
 const StyledOpenSearchDashboardEditDialog = styled('div')(({ theme }) => ({
-  '& .item': theme.paper.item,
+  '& .item': theme?.paper?.item ?? {},
 }));
 
 function OpenSearchDashboardEditDialog({

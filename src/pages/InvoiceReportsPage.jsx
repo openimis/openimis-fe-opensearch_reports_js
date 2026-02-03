@@ -8,8 +8,8 @@ import { INVOICE_REPORTS } from '../constants';
 import { fetchOpenSearchDashboard } from '../actions';
 
 const StyledInvoiceReportsPages = styled('div')(({ theme }) => ({
-  ...theme.page,
-  '& .fab': theme.fab,
+  ...(theme?.page ?? {}),
+  '& .fab': theme?.fab ?? {},
 }));
 
 function InvoiceReportsPages(props) {

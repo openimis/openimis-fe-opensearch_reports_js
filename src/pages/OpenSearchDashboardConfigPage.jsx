@@ -5,9 +5,9 @@ import { styled } from '@mui/material/styles';
 import { connect } from 'react-redux';
 import OpenSearchDashboardTable from '../components/tables/OpenSearchDashboardTable';
 
-const StyledOpenSearchDashboardConfigPage = styled('div')(({ theme }) => ({
-  ...theme.page,
-  '& .fab': theme.fab,
+const StyledOpenSearchDashboardConfigPages = styled('div')(({ theme }) => ({
+  ...(theme?.page ?? {}),
+  '& .fab': theme?.fab ?? {},
 }));
 
 function OpenSearchDashboardConfigPage(props) {
