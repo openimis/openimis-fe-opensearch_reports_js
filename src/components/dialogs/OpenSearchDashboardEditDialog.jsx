@@ -10,15 +10,18 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import EditIcon from '@mui/icons-material/Edit';
 import {
-  FormattedMessage,
   TextInput,
   formatMessageWithValues,
+  useTranslations,
+  useModulesManager,
 } from '@openimis/fe-core';
-import {
-  Grid, IconButton, Switch, FormControlLabel,
-} from '@mui/material';
+import { Grid, Switch, FormControlLabel } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { fetchOpenSearchDashboard, updateOpenSearchDashboard } from '../../actions';
+import {
+  fetchOpenSearchDashboard,
+  updateOpenSearchDashboard,
+} from '../../actions';
+import { MODULE_NAME } from '../../constants';
 
 const StyledOpenSearchDashboardEditDialog = styled('div')(({ theme }) => ({
   '& .item': theme?.paper?.item ?? {},
@@ -30,6 +33,8 @@ function OpenSearchDashboardEditDialog({
   setIsUpdated,
   updateOpenSearchDashboard,
 }) {
+  const modulesManager = useModulesManager();
+  const { formatMessage } = useTranslations(MODULE_NAME, modulesManager);
   const [isOpen, setIsOpen] = useState(false);
   const [dashboardToEdit, setDashboardToEdit] = useState({
     id: dashboard.id,
@@ -53,9 +58,14 @@ function OpenSearchDashboardEditDialog({
   const handleSave = () => {
     updateOpenSearchDashboard(
       dashboardToEdit,
-      formatMessageWithValues(intl, 'openSearchReports', '.create.mutationLabel', {
-        name: dashboard?.name,
-      }),
+      formatMessageWithValues(
+        intl,
+        'openSearchReports',
+        '.create.mutationLabel',
+        {
+          name: dashboard?.name,
+        },
+      ),
     ).then(() => {
       setIsUpdated(true);
     });
@@ -71,11 +81,25 @@ function OpenSearchDashboardEditDialog({
 
   return (
     <StyledOpenSearchDashboardEditDialog>
-      <IconButton
+      <Button
+        variant="contained"
+        color="primary"
+        startIcon={<EditIcon />}
         onClick={handleOpen}
+        sx={{
+          borderRadius: '20px',
+          textTransform: 'none',
+          fontWeight: 'bold',
+          padding: '6px 20px',
+          whiteSpace: 'nowrap',
+          boxShadow: 'none',
+          '&:hover': {
+            boxShadow: '0 2px 8px 0 rgba(0,0,0,0.2)',
+          },
+        }}
       >
-        <EditIcon />
-      </IconButton>
+        {formatMessage('dashboard.edit')}
+      </Button>
       <Dialog
         open={isOpen}
         onClose={handleClose}
@@ -87,7 +111,9 @@ function OpenSearchDashboardEditDialog({
         }}
       >
         <DialogTitle>
-          {formatMessageWithValues(intl, 'openSearchReports', 'dialog.title', { dashboardName: dashboard.name })}
+          {formatMessageWithValues(intl, 'openSearchReports', 'dialog.title', {
+            dashboardName: dashboard.name,
+          })}
         </DialogTitle>
         <DialogContent>
           <Grid container direction="column" className="item">
@@ -120,21 +146,32 @@ function OpenSearchDashboardEditDialog({
                     color="primary"
                   />
                 )}
-                label={
-                  formatMessageWithValues(intl, 'openSearchReports', 'dashboard.synchStatus', {
-                    status: dashboardToEdit.synchDisabled ? 'Disabled' : 'Enabled',
-                  })
-                }
+                label={formatMessageWithValues(
+                  intl,
+                  'openSearchReports',
+                  'dashboard.synchStatus',
+                  {
+                    status: dashboardToEdit.synchDisabled
+                      ? 'Disabled'
+                      : 'Enabled',
+                  },
+                )}
               />
             </Grid>
           </Grid>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} variant="outlined">
-            <FormattedMessage module="openSearchReports" id="dialog.cancel" />
+            {formatMessage('dialog.cancel')}
           </Button>
-          <Button onClick={handleSave} disabled={!canSave} variant="contained" color="primary" autoFocus>
-            <FormattedMessage module="openSearchReports" id="dialog.save" />
+          <Button
+            onClick={handleSave}
+            disabled={!canSave}
+            variant="contained"
+            color="primary"
+            autoFocus
+          >
+            {formatMessage('dialog.save')}
           </Button>
         </DialogActions>
       </Dialog>
@@ -142,10 +179,13 @@ function OpenSearchDashboardEditDialog({
   );
 }
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({
-  updateOpenSearchDashboard,
-  fetchOpenSearchDashboard,
-}, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators(
+  {
+    updateOpenSearchDashboard,
+    fetchOpenSearchDashboard,
+  },
+  dispatch,
+);
 
 export { StyledOpenSearchDashboardEditDialog };
 export default injectIntl(
