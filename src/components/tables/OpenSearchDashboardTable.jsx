@@ -24,9 +24,7 @@ import { fetchOpenSearchDashboards } from '../../actions';
 import OpenSearchDashboardEditDialog from '../dialogs/OpenSearchDashboardEditDialog';
 
 const StyledOpenSearchDashboardTable = styled('div')(({ theme }) => ({
-  padding: '24px',
   '& .tableContainer': {
-    marginTop: '24px',
     borderRadius: '8px',
     overflow: 'hidden',
     boxShadow:
