@@ -8,12 +8,12 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import EditIcon from '@mui/icons-material/Edit';
 import {
   TextInput,
   formatMessageWithValues,
   useTranslations,
   useModulesManager,
+  GetIconComponent,
 } from '@openimis/fe-core';
 import { Grid, Switch, FormControlLabel } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -22,6 +22,7 @@ import {
   updateOpenSearchDashboard,
 } from '../../actions';
 import { MODULE_NAME } from '../../constants';
+const EditIcon = GetIconComponent("Edit");
 
 const StyledOpenSearchDashboardEditDialog = styled('div')(({ theme }) => ({
   '& .item': theme?.paper?.item ?? {},

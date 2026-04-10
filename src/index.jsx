@@ -1,12 +1,14 @@
 /* eslint-disable react/react-in-jsx-scope */
 import React from 'react';
-import Tune from '@mui/icons-material/Tune';
-import DoubleArrow from '@mui/icons-material/DoubleArrow';
-import Person from '@mui/icons-material/Person';
-import People from '@mui/icons-material/People';
-import Update from '@mui/icons-material/Update';
-import PaymentIcon from '@mui/icons-material/Payment';
-import ToolIcon from '@mui/icons-material/Build';
+import { GetIconComponent } from "@openimis/fe-core";
+const Tune = GetIconComponent("Tune")
+const DoubleArrow = GetIconComponent("DoubleArrow")
+const Person = GetIconComponent("Person")
+const People = GetIconComponent("People")
+const Update = GetIconComponent("Update")
+const PaymentIcon = GetIconComponent("PaymentIcon")
+const ToolIcon = GetIconComponent("Build")
+
 import { FormattedMessage } from '@openimis/fe-core';
 import messagesEn from './translations/en.json';
 import BeneficiaryReportsPage from './pages/BeneficiaryReportsPage';
@@ -25,14 +27,14 @@ const DEFAULT_CONFIG = {
   reducers: [{ key: 'openSearchReports', reducer }],
   'core.MainMenu': [{ name: 'OpenSearchReportsMenu', component: OpenSearchReportsMenu }],
   'core.Router': [
-    { path: 'individualReports', component: IndividualReportsPage },
-    { path: 'groupReports', component: GroupReportsPage },
-    { path: 'beneficiaryReports', component: BeneficiaryReportsPage },
-    { path: 'invoiceReports', component: InvoiceReportsPage },
-    { path: 'grievanceReports', component: GrievanceReportsPage },
-    { path: 'dataUpdatesReports', component: DataUpdatesReportsPage },
-    { path: 'paymentReports', component: PaymentReportsPage },
-    { path: 'dashboardConfiguration', component: OpenSearchDashboardConfigPage },
+    { path: 'individualReports', component: IndividualReportsPage, rights: ['openSearchReports.view'], icon: Person },
+    { path: 'groupReports', component: GroupReportsPage, rights: ['openSearchReports.view'], icon: People },
+    { path: 'beneficiaryReports', component: BeneficiaryReportsPage, rights: ['openSearchReports.view'], icon: Person },
+    { path: 'invoiceReports', component: InvoiceReportsPage, rights: ['openSearchReports.view'], icon: DoubleArrow },
+    { path: 'grievanceReports', component: GrievanceReportsPage, rights: ['openSearchReports.view'], icon: Tune },
+    { path: 'dataUpdatesReports', component: DataUpdatesReportsPage, rights: ['openSearchReports.view'], icon: Update },
+    { path: 'paymentReports', component: PaymentReportsPage, rights: ['openSearchReports.view'], icon: PaymentIcon },
+    { path: 'dashboardConfiguration', component: OpenSearchDashboardConfigPage, rights: ['openSearchReports.view'], icon: ToolIcon },
   ],
   'OpenSearch.MainMenu': [
     {
