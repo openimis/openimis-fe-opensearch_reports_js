@@ -1,89 +1,111 @@
 /* eslint-disable react/react-in-jsx-scope */
 import React from 'react';
-import { GetIconComponent } from "@openimis/fe-core";
-const Tune = GetIconComponent("Tune")
-const DoubleArrow = GetIconComponent("DoubleArrow")
-const Person = GetIconComponent("Person")
-const People = GetIconComponent("People")
-const Update = GetIconComponent("Update")
-const PaymentIcon = GetIconComponent("PaymentIcon")
-const ToolIcon = GetIconComponent("Build")
-
-import { FormattedMessage } from '@openimis/fe-core';
 import messagesEn from './translations/en.json';
 import BeneficiaryReportsPage from './pages/BeneficiaryReportsPage';
 import GrievanceReportsPage from './pages/GrievanceReportsPage';
 import InvoiceReportsPage from './pages/InvoiceReportsPage';
 import PaymentReportsPage from './pages/PaymentReportsPage';
-import OpenSearchReportsMenu from './menus/OpenSearchReportsMenu';
 import OpenSearchDashboardConfigPage from './pages/OpenSearchDashboardConfigPage';
 import reducer from './reducer';
 import IndividualReportsPage from './pages/IndividualReportsPage';
 import GroupReportsPage from './pages/GroupReportsPage';
 import DataUpdatesReportsPage from './pages/DataUpdatesReportsPage';
+import {RIGHT_OPENSEARCH_DASHBOARD_UPDATE, RIGHT_OPENSEARCH_DASHBOARD} from "./constants"
 
 const DEFAULT_CONFIG = {
   translations: [{ key: 'en', messages: messagesEn }],
   reducers: [{ key: 'openSearchReports', reducer }],
-  'core.MainMenu': [{ name: 'OpenSearchReportsMenu', component: OpenSearchReportsMenu }],
+  'core.MainMenu': [{ name: 'OpenSearchReportsMenu', id:"OpenSearch.MainMenu", text:"openSearchReports.openSearch", icon: "DashboardIcon" }],
   'core.Router': [
-    { path: 'individualReports', component: IndividualReportsPage, rights: ['openSearchReports.view'], icon: Person },
-    { path: 'groupReports', component: GroupReportsPage, rights: ['openSearchReports.view'], icon: People },
-    { path: 'beneficiaryReports', component: BeneficiaryReportsPage, rights: ['openSearchReports.view'], icon: Person },
-    { path: 'invoiceReports', component: InvoiceReportsPage, rights: ['openSearchReports.view'], icon: DoubleArrow },
-    { path: 'grievanceReports', component: GrievanceReportsPage, rights: ['openSearchReports.view'], icon: Tune },
-    { path: 'dataUpdatesReports', component: DataUpdatesReportsPage, rights: ['openSearchReports.view'], icon: Update },
-    { path: 'paymentReports', component: PaymentReportsPage, rights: ['openSearchReports.view'], icon: PaymentIcon },
-    { path: 'dashboardConfiguration', component: OpenSearchDashboardConfigPage, rights: ['openSearchReports.view'], icon: ToolIcon },
+    { 
+      path: 'individualReports',
+      text: "openSearchReports.openSearch.individualReports",
+      id: 'openSearch.individualReports',
+      component: IndividualReportsPage,
+      rights: [RIGHT_OPENSEARCH_DASHBOARD],
+      icon: "Person"
+    },
+    { 
+      path: 'groupReports',
+      text: "openSearchReports.openSearch.groupReports",
+      id: 'openSearch.groupReports',
+      component: GroupReportsPage,
+      rights: [RIGHT_OPENSEARCH_DASHBOARD],
+      icon: "People" 
+    },
+    { 
+      path: 'beneficiaryReports',
+      text: "openSearchReports.openSearch.beneficiaryReports",
+      id: 'openSearch.beneficiaryReports',
+      component: BeneficiaryReportsPage,
+      rights: [RIGHT_OPENSEARCH_DASHBOARD],
+      icon: "Person"
+    },
+    { 
+      path: 'invoiceReports',
+      text: "openSearchReports.openSearch.invoiceReports",
+      id: 'openSearch.invoiceReports',
+      component: InvoiceReportsPage,
+      rights: [RIGHT_OPENSEARCH_DASHBOARD],
+      icon: "DoubleArrow"
+    },
+    { 
+      path: 'grievanceReports',
+      id: 'openSearch.grievanceReports',
+      component: GrievanceReportsPage,
+      rights: [RIGHT_OPENSEARCH_DASHBOARD],
+      icon: "Tune",
+      text: "openSearchReports.openSearch.grievanceReports",
+    },
+    { 
+      path: 'dataUpdatesReports',
+      id: 'openSearch.dataUpdatesReports',
+      component: DataUpdatesReportsPage,
+      rights: [RIGHT_OPENSEARCH_DASHBOARD],
+      text: "openSearchReports.openSearch.dataUpdatesReports",
+      icon: "Update"
+    },
+    { 
+      path: 'paymentReports',
+      text: "openSearchReports.openSearch.paymentReports",
+      id: 'openSearch.paymentReports',
+      component: PaymentReportsPage,
+      rights: [RIGHT_OPENSEARCH_DASHBOARD],
+      icon: "Payment"
+    },
+    { 
+      path: 'dashboardConfiguration',
+      id: 'openSearch.openSearchConfig',
+      component: OpenSearchDashboardConfigPage,
+      rights: [RIGHT_OPENSEARCH_DASHBOARD_UPDATE],
+      text: "openSearchReports.openSearch.openSearchConfig",
+      icon: "Settings"
+    },
   ],
   'OpenSearch.MainMenu': [
     {
-      text: <FormattedMessage module="openSearchReports" id="openSearch.individualReports" />,
-      icon: <Person />,
-      route: '/individualReports',
-      id: 'openSearch.individualReports',
+      route: 'individualReports',
     },
     {
-      text: <FormattedMessage module="openSearchReports" id="openSearch.groupReports" />,
-      icon: <People />,
-      route: '/groupReports',
-      id: 'openSearch.groupReports',
+      route: 'groupReports',
     },
     {
-      text: <FormattedMessage module="openSearchReports" id="openSearch.beneficiaryReports" />,
-      icon: <Person />,
-      route: '/beneficiaryReports',
-      id: 'openSearch.beneficiaryReports',
+      route: 'beneficiaryReports',
     },
     {
-      text: <FormattedMessage module="openSearchReports" id="openSearch.invoiceReports" />,
-      icon: <DoubleArrow />,
-      route: '/invoiceReports',
-      id: 'openSearch.invoiceReports',
+      route: 'invoiceReports',
     },
     {
-      text: <FormattedMessage module="openSearchReports" id="openSearch.paymentReports" />,
-      icon: <PaymentIcon />,
-      route: '/paymentReports',
-      id: 'openSearch.paymentReports',
+      route: 'paymentReports',
     },
     {
-      text: <FormattedMessage module="openSearchReports" id="openSearch.grievanceReports" />,
-      icon: <Tune />,
-      route: '/grievanceReports',
-      id: 'openSearch.grievanceReports',
+      route: 'grievanceReports',
     },
     {
-      text: <FormattedMessage module="openSearchReports" id="openSearch.dataUpdatesReports" />,
-      icon: <Update />,
-      route: '/dataUpdatesReports',
-      id: 'openSearch.dataUpdatesReports',
+      route: 'dataUpdatesReports',
     },
     {
-      text: <FormattedMessage module="openSearchReports" id="openSearch.openSearchConfig" />,
-      icon: <ToolIcon />,
-      route: '/dashboardConfiguration',
-      id: 'openSearch.openSearchConfig',
+      route: 'dashboardConfiguration',
     },
   ],
 };
