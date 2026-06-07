@@ -1,6 +1,6 @@
+/* eslint-disable */
 import React from 'react';
 
-/* eslint-disable */
 function OpenSearchDashboard(props) {
   const currentHostname = window.location.hostname;
   const openSearchBaseRootPath = process.env.OPENSEARCH_PROXY_ROOT ?? 'opensearch';

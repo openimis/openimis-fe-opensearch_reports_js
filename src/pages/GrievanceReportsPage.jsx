@@ -2,35 +2,35 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
 import { Helmet, withModulesManager, formatMessage } from '@openimis/fe-core';
 import { injectIntl } from 'react-intl';
-import { withTheme, withStyles } from '@material-ui/core/styles';
+import { styled } from '@mui/material/styles';
 import OpenSearchDashboard from '../components/OpenSearchDashboard';
-import { DATA_UPDATES_REPORTS } from '../constants';
+import { GRIEVANCE_REPORTS } from '../constants';
 import { fetchOpenSearchDashboard } from '../actions';
 
-const styles = (theme) => ({
-  page: theme.page,
-  fab: theme.fab,
-});
+const StyledGrievanceReportsPages = styled('div')(({ theme }) => ({
+  ...(theme?.page ?? {}),
+  '& .fab': theme?.fab ?? {},
+}));
 
-function DataUpdatesReportsPages(props) {
-  const { intl, classes } = props;
-
+function GrievanceReportsPages(props) {
+  const { intl } = props;
   const dispatch = useDispatch();
-
-  const { dashboard } = useSelector((store) => store.openSearchReports);
+  const {
+    dashboard,
+  } = useSelector((store) => store.openSearchReports);
 
   useEffect(() => {
-    const params = [`name_Iexact: "${DATA_UPDATES_REPORTS}"`];
+    const params = [`name_Iexact: "${GRIEVANCE_REPORTS}"`];
     dispatch(fetchOpenSearchDashboard(params));
   }, []);
 
   return (
-    <div className={classes.page}>
+    <StyledGrievanceReportsPages>
       <Helmet title={formatMessage(intl, 'openSearchReports', 'openSearch')} />
       <OpenSearchDashboard
         dashboardUrl={dashboard?.url}
       />
-    </div>
+    </StyledGrievanceReportsPages>
   );
 }
 
@@ -38,6 +38,7 @@ const mapStateToProps = (state) => ({
   rights: !!state.core && !!state.core.user && !!state.core.user.i_user ? state.core.user.i_user.rights : [],
 });
 
+export { StyledGrievanceReportsPages };
 export default injectIntl(
-  withModulesManager(withTheme(withStyles(styles)(connect(mapStateToProps)(DataUpdatesReportsPages)))),
+  withModulesManager(connect(mapStateToProps)(GrievanceReportsPages)),
 );
