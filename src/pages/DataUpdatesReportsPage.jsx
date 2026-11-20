@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
-import { Helmet, withModulesManager, formatMessage } from '@openimis/fe-core';
-import { injectIntl } from 'react-intl';
+import { Helmet, withModulesManager, formatMessage, injectIntl } from '@openimis/fe-core';
+
 import { styled } from '@mui/material/styles';
 import OpenSearchDashboard from '../components/OpenSearchDashboard';
 import { DATA_UPDATES_REPORTS } from '../constants';
