@@ -2,8 +2,8 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { styled } from '@mui/material/styles';
-import { formatMessage, Helmet, withModulesManager } from '@openimis/fe-core';
-import { injectIntl } from 'react-intl';
+import { formatMessage, Helmet, withModulesManager, injectIntl } from '@openimis/fe-core';
+
 import { connect } from 'react-redux';
 import OpenSearchDashboardTable from '../components/tables/OpenSearchDashboardTable';
 
