@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { bindActionCreators } from 'redux';
@@ -14,6 +13,7 @@ import {
   useTranslations,
   useModulesManager,
   GetIconComponent,
+  injectIntl,
 } from '@openimis/fe-core';
 import { Grid, Switch, FormControlLabel } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -104,11 +104,13 @@ function OpenSearchDashboardEditDialog({
       <Dialog
         open={isOpen}
         onClose={handleClose}
-        PaperProps={{
-          style: {
-            width: 900,
-            maxWidth: 900,
-          },
+        slotProps={{
+          paper: {
+            style: {
+              width: 900,
+              maxWidth: 900,
+            },
+          }
         }}
       >
         <DialogTitle>
